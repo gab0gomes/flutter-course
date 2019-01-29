@@ -38,7 +38,7 @@ class CustomDrawer extends StatelessWidget {
                     Positioned(
                       top: 8.0,
                       left: 0.0,
-                      child: Text(
+                      child: const Text(
                         'Shoes\nStore',
                         style: TextStyle(
                           fontSize: 34.0,
@@ -80,7 +80,7 @@ class CustomDrawer extends StatelessWidget {
               ),
               Divider(),
               DrawerTile(Icons.home, 'Início', pageController, 0),
-              DrawerTile(Icons.list, 'Produtos', pageController, 1),
+              DrawerTile(Icons.list, 'Categorias', pageController, 1),
               DrawerTile(Icons.location_on, 'Lojas', pageController, 2),
               DrawerTile(Icons.playlist_add_check, 'Meus pedidos', pageController, 3),
             ],

@@ -54,7 +54,7 @@ class CategoryScreen extends StatelessWidget {
                     padding: EdgeInsets.all(4.0),
                     itemCount: snapshot.data.documents.length,
                     itemBuilder: (context, index) {
-                      return ProductTile('grid', ProductData.fromDocument(snapshot.data.documents[index]));
+                      return ProductTile('tile', ProductData.fromDocument(snapshot.data.documents[index]));
                     },
                   ),
                 ],

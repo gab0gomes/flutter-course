@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:store/models/cartModel.dart';
 import 'package:store/models/userModel.dart';
 import 'package:store/screens/homeScreen.dart';
 import 'package:scoped_model/scoped_model.dart';
@@ -12,14 +13,21 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ScopedModel<UserModel>(
       model: UserModel(),
-      child:  MaterialApp(
-        title: 'Home',
-        theme: ThemeData(
-          primaryColor: Color.fromARGB(255, 4, 125, 141),
-          primarySwatch: Colors.blue,
-        ),
-        home: HomeScreen(),
-      ),
+      child: ScopedModelDescendant<UserModel>(
+        builder: (context, child, model) {
+          return ScopedModel<CartModel>(
+            model: CartModel(model),
+            child: MaterialApp(
+              title: 'Home',
+              theme: ThemeData(
+                primaryColor: Color.fromARGB(255, 4, 125, 141),
+                primarySwatch: Colors.blue,
+              ),
+              home: HomeScreen(),
+            ),
+          );
+        },
+      )
     );
   }
 }
